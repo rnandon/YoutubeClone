@@ -1,0 +1,32 @@
+App 
+|
+|-> VideoPlayerPage
+|    |-> VideoBox
+|    |    |-> VideoPlayer
+|    |    |-> VideoInfo
+|    |-> RelatedVideos
+|    |    |-> ResultVideo (??)
+|    |    |    |-> VideoThumbnail
+|    |    |    |-> VideoInfo (??)
+|    |-> CommentsBox
+|    |    |-> AddComment
+|    |    |-> ViewComment (like/dislike/reply, only ever one reply shown)
+|
+|-> Navbar
+|    |-> Logo
+|    |-> SearchBar
+|    |-> AccountInfo
+|
+|-> SearchResultsPage
+|    |-> SearchResults
+|    |    |-> ResultVideo (??, see above)
+|
+|-> HomePage
+|    |-> revisit
+
+
+TODOs:
+- Routing: Ryan
+- YouTube API calls: Fue
+- Wire up backend calls: Fue
+- Build components: Both
