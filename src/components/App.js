@@ -1,24 +1,48 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import reactDom from 'react-dom';
-
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import "./App.css";
+
+// Notes:
+// - Nav section will become the main navbar
+// - Switch needs to call actual components instead of just the fragments below
+
+
 
 export default function App() {
-  const name = "John Doe"
+  const name="john doe";
+  let [searchParameters, setSearchParameters] = useState("");
+  const handleChange = (event) => {
+    setSearchParameters(event.target.value);
+  }
+
+
   return (
     <Router>
       <main>
-        <nav>
+        <nav class="navbar navbar-light bg-light">
+          <div class="container-fluid">
+            <Link to="/" class="navbar-brand">Navbar</Link>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" value={searchParameters} onChange={handleChange} aria-label="Search" />
+              <Link to={`/search/${searchParameters}`}>
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </Link>
+            </form>
+          </div>
+        </nav>
+
+        <div>
           <h1>Hello</h1>
           <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to={`/about/${name}`}>About</Link></li>
+            <li><Link to={`/search/${name}`}>About</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
-        </nav>
+        </div>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/about/:name"  component={About} />
+          <Route path="/search/:name"  component={Search} />
           <Route path="/contact"  component={Contact} />
         </Switch>
       </main>
@@ -34,7 +58,7 @@ const Home = () => (
 )
 
 // Will become the search page, parameters need to change to search query
-const About = ({match:{params:{name}}}) => (
+const Search = ({match:{params:{name}}}) => (
   <Fragment>
     <h1>About {name}</h1>
   </Fragment>
