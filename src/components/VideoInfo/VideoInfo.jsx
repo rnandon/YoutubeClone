@@ -1,14 +1,18 @@
 import React from 'react';
 
-export default VideoInfo = (props) => {
-    const info = props.info; // get info from parent
-
+const VideoInfo = (props) => {
     /*
     layout concept:
     creator on left
     description next to that
     */
     return (
-        <h1> {info} </h1>
+        <div>
+            <h1>{props.title}</h1>
+            <h2>{props.creator}</h2>
+            <h4>{props.description}</h4>
+        </div>
     )
 }
+
+export default VideoInfo;

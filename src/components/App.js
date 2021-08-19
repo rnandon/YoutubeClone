@@ -4,6 +4,8 @@ import reactDom from 'react-dom';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import "./App.css";
 
+import SearchResultsPage from './Pages/SearchResultsPage';
+
 // Notes:
 // - Nav section will become the main navbar
 // - Switch needs to call actual components instead of just the fragments below
@@ -32,7 +34,7 @@ const currentVideoId = "TJgUiZgX5rE";
 async function getVideo() {
   const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${currentVideoId}&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg`);
 
-  console.log('data', response.data);
+  console.log('video', response.data);
 }
 getVideo().catch(console.error);
 
@@ -63,7 +65,7 @@ export default function App() {
             <Link to="/" class="navbar-brand">Navbar</Link>
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" value={searchParameters} onChange={handleChange} aria-label="Search" />
-              <Link to={`/search/${searchParameters}`}>
+              <Link to={`/search/${searchTerm}`}>
                 <button class="btn btn-outline-success" type="submit">Search</button>
               </Link>
             </form>
@@ -74,13 +76,13 @@ export default function App() {
           <h1>Hello</h1>
           <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to={`/search/${name}`}>About</Link></li>
+            <li><Link to={`/search/${searchTerm}`}>About</Link></li>
             <li><Link to="/video">Video</Link></li>
           </ul>
         </div>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/search/:name"  component={Search} />
+          <Route path="/search/:searchTerm"  component={Search} />
           <Route path="/video"  component={Video} />
         </Switch>
       </main>
@@ -98,9 +100,10 @@ const Home = () => (
 )
 
 // Will become the search page, parameters need to change to search query
-const Search = ({match:{params:{name}}}) => (
+const Search = ({match:{params:{searchTerm}}}) => (
   <Fragment>
-    <h1>About {name}</h1>
+    <h1>About {searchTerm}</h1>
+    <SearchResultsPage searchTerm={searchTerm} />
   </Fragment>
   );
 

@@ -2,12 +2,8 @@ import React from 'react';
 import VideoInfo from '../VideoInfo/VideoInfo';
 import VideoThumbnail from '../VideoThumbnail/VideoThumbnail';
 
-export default VideoPreview = (props) => {
-    const videoId = props.videoId;
-    // Get info and thumbnail from YouTube api?
-
-    const imgurl="";
-    const info="";
+const VideoPreview = (props) => {
+    const video = props.video;
 
     /*
     layout concept:
@@ -18,8 +14,10 @@ export default VideoPreview = (props) => {
 
     return (
         <div>
-            <VideoThumbnail imgurl={imgurl} />
-            <VideoInfo info={info} />
+            <VideoThumbnail imgurl={video.thumbnail} />
+            <VideoInfo title={video.title} description={video.description} creator={video.creator} />
         </div>
     )
 }
+
+export default VideoPreview;

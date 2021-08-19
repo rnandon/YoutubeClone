@@ -1,10 +1,21 @@
 import React from 'react';
 import VideoPreview from '../VideoPreview/VideoPreview';
 
-export default SearchResults = (props) => {
-    const searchResults = ""; // Get search results for query from youtube api
+const SearchResults = (props) => {
+    debugger;
+    const searchResults = props.searchResults;
     // Map over results,  create array of VideoPreview objects
-    const results = [];
+    const results = searchResults.map((result) => {
+        const video = {
+            videoId: result.id.videoId,
+            title: result.snippet.title,
+            description: result.snippet.description,
+            thumbnail: result.snippet.thumbnails.high,
+            creator: result.channelTitle
+        };
+
+        return <VideoPreview video={video} />
+    })
 
 
     return (
@@ -13,3 +24,5 @@ export default SearchResults = (props) => {
         </div>
     )
 }
+
+export default SearchResults;
