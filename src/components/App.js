@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { validateCLIOptions } from 'jest-validate';
+import { get } from 'jquery';
 import React, { Fragment, useState } from 'react';
 import reactDom from 'react-dom';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
@@ -7,6 +10,23 @@ import "./App.css";
 // - Nav section will become the main navbar
 // - Switch needs to call actual components instead of just the fragments below
 
+// get popular videos
+async function getPopularVideos() {
+    const response = await axios.get('https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=8&regionCode=US&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg');
+
+    console.log('data', response.data);
+}
+getPopularVideos().catch(console.error);
+
+// get search results
+const searchTerm = "f1";
+
+async function getSearchResults() {
+  const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${searchTerm}&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg`);
+
+  console.log('data', response.data);
+}
+getSearchResults().catch(console.error);
 
 
 export default function App() {
