@@ -9,6 +9,7 @@ export default function App() {
     <Router>
       <main>
         <nav>
+          <h1>Hello</h1>
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to={`/about/${name}`}>About</Link></li>
