@@ -37,13 +37,13 @@ export default function App() {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to={`/search/${name}`}>About</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/video">Video</Link></li>
           </ul>
         </div>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/search/:name"  component={Search} />
-          <Route path="/contact"  component={Contact} />
+          <Route path="/video"  component={Video} />
         </Switch>
       </main>
     </Router>
@@ -67,7 +67,7 @@ const Search = ({match:{params:{name}}}) => (
   );
 
   // Will become the video player page, parameters need to change to video id
-const Contact = ({history}) => (
+const Video = ({history}) => (
   <Fragment>
     <h1>Contact</h1>
     <button onClick={ () => history.push('/') } >Go to home</button>
