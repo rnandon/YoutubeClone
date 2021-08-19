@@ -1,7 +1,10 @@
 import React from 'react';
+import SearchResults from '../SearchResults/SearchResults';
 
 export default SearchResultsPage = (props) => {
     return (
-        <h1>Under construction</h1>
+        <div>
+            <SearchResults query={props.query} />
+        </div>
     )
 }
