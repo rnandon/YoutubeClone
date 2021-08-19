@@ -52,8 +52,10 @@ export default function App() {
 
 // Will become the home page for the app
 const Home = () => (
+
   <Fragment>
     <h1>Home</h1>
+    <p></p>
   </Fragment>
 )
 

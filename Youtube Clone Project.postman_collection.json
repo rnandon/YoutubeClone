@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "13abcd1a-0939-451e-abc6-900f031fdd88",
+		"name": "Youtube Clone Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get_Comment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/video/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"video",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add_comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"videoId\": \"12345678911\",\r\n    \"body\": \"This video is awesome\",\r\n    \"likes\": \"0\",\r\n    \"dislikes\": \"0\",\r\n    \"parentComment\": \"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/video/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"video",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like_Comment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Dislike_Comment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"videoId\": \"12345678911\",\r\n    \"body\": \"This video is awesome\",\r\n    \"likes\": \"0\",\r\n    \"dislikes\": \"0\",\r\n    \"parentComment\": \"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/comment/dislike/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"comment",
+						"dislike",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Popular Videos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=8&regionCode=US&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg",
+					"protocol": "https",
+					"host": [
+						"youtube",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"youtube",
+						"v3",
+						"videos"
+					],
+					"query": [
+						{
+							"key": "part",
+							"value": "snippet%2CcontentDetails%2Cstatistics"
+						},
+						{
+							"key": "chart",
+							"value": "mostPopular"
+						},
+						{
+							"key": "maxResults",
+							"value": "8"
+						},
+						{
+							"key": "regionCode",
+							"value": "US"
+						},
+						{
+							"key": "key",
+							"value": "AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Youtube_Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=surfing&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg",
+					"protocol": "https",
+					"host": [
+						"youtube",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"youtube",
+						"v3",
+						"search"
+					],
+					"query": [
+						{
+							"key": "part",
+							"value": "snippet"
+						},
+						{
+							"key": "maxResults",
+							"value": "25"
+						},
+						{
+							"key": "q",
+							"value": "surfing"
+						},
+						{
+							"key": "key",
+							"value": "AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Youtube_Related_Videos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&relatedToVideoId=Ks-_Mh1QhMc&type=video&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg",
+					"protocol": "https",
+					"host": [
+						"youtube",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"youtube",
+						"v3",
+						"search"
+					],
+					"query": [
+						{
+							"key": "part",
+							"value": "snippet"
+						},
+						{
+							"key": "maxResults",
+							"value": "10"
+						},
+						{
+							"key": "relatedToVideoId",
+							"value": "Ks-_Mh1QhMc"
+						},
+						{
+							"key": "type",
+							"value": "video"
+						},
+						{
+							"key": "key",
+							"value": "AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Youtube_Video",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=Ks-_Mh1QhMc&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg",
+					"protocol": "https",
+					"host": [
+						"youtube",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"youtube",
+						"v3",
+						"videos"
+					],
+					"query": [
+						{
+							"key": "part",
+							"value": "snippet%2CcontentDetails%2Cstatistics"
+						},
+						{
+							"key": "id",
+							"value": "Ks-_Mh1QhMc"
+						},
+						{
+							"key": "key",
+							"value": "AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
