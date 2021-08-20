@@ -9,22 +9,10 @@ import Comments from '../Comments/Comments';
 
 const Video = (props) => {
     const videoId = props.videoId;
-    // let [videoData, setVideoData] = useState({});
     let [videoInfo, setVideoInfo] = useState(false);
 
     let {videoData} = useWaitData(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg`);
 
-    // async function getVideo(videoId) {
-    //     const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg`);
-        
-    //     if (response.data) {
-    //         setVideoData(response.data.items[0]);
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     getVideo(videoId)
-    // }, [videoId])
     
     useEffect(() => {
         if (videoData.items && !videoInfo) {

@@ -1,25 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SearchResults from '../SearchResults/SearchResults';
+import useWaitData from '../../hooks/useWaitData';
 
 const SearchResultsPage = (props) => {
-    //const searchResults = getSearchResults(props.searchTerm).catch(console.error);
-    const searchResults = require('../../hooks/sampleOutput.json')
+    // videoData is actually search results
+    let {videoData} = useWaitData(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${props.searchTerm}&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg`)
+    let [outputResults, setOutputResults] = useState([]) 
+    //const searchResults = require('../../hooks/sampleOutput.json')
 
-    if (searchResults) {
+    useEffect(() => {
+        console.log(videoData);
+        if (videoData.items) {
+            setOutputResults(videoData.items);
+        }
+    }, [videoData])
+
+    if (outputResults.length > 0) {
+        console.log("Output results: " + outputResults);
         return (
             <div>
-                <SearchResults searchResults={searchResults.items} />
+                <SearchResults searchResults={outputResults} />
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                Gathering Search results
             </div>
         )
     }
-}
-
-
-async function getSearchResults(searchTerm) {
-    const response = axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${searchTerm}&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg`)
-
-    return response.data;
 }
 
 export default SearchResultsPage;
