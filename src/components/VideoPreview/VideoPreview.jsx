@@ -1,6 +1,7 @@
 import React from 'react';
 import VideoInfo from '../VideoInfo/VideoInfo';
 import VideoThumbnail from '../VideoThumbnail/VideoThumbnail';
+import { Link } from 'react-router-dom';
 
 const VideoPreview = (props) => {
     const video = props.video;
@@ -13,10 +14,10 @@ const VideoPreview = (props) => {
 
 
     return (
-        <div>
+        <Link to={`/video/${video.id}`}>
             <VideoThumbnail imgurl={video.thumbnail} />
             <VideoInfo title={video.title} description={video.description} creator={video.creator} />
-        </div>
+        </Link>
     )
 }
 
