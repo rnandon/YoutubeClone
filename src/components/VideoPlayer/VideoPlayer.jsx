@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default VideoPlayer = (props) => {
+const VideoPlayer = (props) => {
     const videoUrl = props.videoUrl;
 
     /* return iframe with youtube video player from videoUrl */
@@ -9,3 +9,5 @@ export default VideoPlayer = (props) => {
         <h1>Under construction</h1>
     )
 }
+
+export default VideoPlayer;

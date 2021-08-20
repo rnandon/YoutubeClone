@@ -3,7 +3,7 @@ import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import VideoInfo from '../VideoInfo/VideoInfo';
 import Comments from '../Comments/Comments';
 
-export default Video = (props) => {
+const Video = (props) => {
     const videoId = 0; // get from props
 
     const videoData = {}; // get data packet from YouTube api
@@ -26,3 +26,5 @@ export default Video = (props) => {
         </div>
     )
 }
+
+export default Video;

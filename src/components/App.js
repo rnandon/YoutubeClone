@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import "./App.css";
 
 import SearchResultsPage from './Pages/SearchResultsPage';
-import VideoPlayerPage from './Pages/VideoPlayerPage';
+// import VideoPlayerPage from './Pages/VideoPlayerPage';
 
 // Notes:
 // - Nav section will become the main navbar
@@ -78,7 +78,7 @@ export default function App() {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to={`/search/${searchTerm}`}>Search</Link></li>
-            <li><Link to={`/video/${videoId}`}>Video</Link></li>
+            <li><Link to={`/video/${currentVideoId}`}>Video</Link></li>
           </ul>
         </div>
         <Switch>
@@ -112,6 +112,6 @@ const Search = ({match:{params:{searchTerm}}}) => (
 const Video = ({match:{params:{videoId}}}) => (
   <Fragment>
     <h1>Watching {videoId}</h1>
-    <VideoPlayerPage videoId={videoId} /> 
+    {/* <VideoPlayerPage videoId={videoId} /> */}
   </Fragment>
   );

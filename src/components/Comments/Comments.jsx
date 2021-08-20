@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default Comments = (props) => {
+const Comments = (props) => {
     const videoId = props.videoId;
     let comments = ""; // get comments from backend passing in videoId
     // map over comments, get an array of comment components (if there are some)
@@ -12,3 +12,5 @@ export default Comments = (props) => {
         </div>
     )
 }
+
+export default Comments;
