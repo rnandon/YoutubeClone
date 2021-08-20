@@ -14,7 +14,7 @@ const VideoPreview = (props) => {
 
 
     return (
-        <Link to={`/video/${video.id}`}>
+        <Link to={`/video/${video.videoId}`}>
             <VideoThumbnail imgurl={video.thumbnail} />
             <VideoInfo title={video.title} description={video.description} creator={video.creator} />
         </Link>

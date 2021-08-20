@@ -57,9 +57,9 @@ async function getRelatedVideos() {
 
 export default function App() {
   const name="john doe";
-  let [searchParameters, setSearchParameters] = useState("");
+  let [searchTerm, setSearchTerm] = useState("");
   const handleChange = (event) => {
-    setSearchParameters(event.target.value);
+    setSearchTerm(event.target.value);
   }
 
 
@@ -70,7 +70,7 @@ export default function App() {
           <div class="container-fluid">
             <Link to="/" class="navbar-brand">Navbar</Link>
             <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" value={searchParameters} onChange={handleChange} aria-label="Search" />
+              <input class="form-control me-2" type="search" placeholder="Search" value={searchTerm} onChange={handleChange} aria-label="Search" />
               <Link to={`/search/${searchTerm}`}>
                 <button class="btn btn-outline-success" type="submit">Search</button>
               </Link>
