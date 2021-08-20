@@ -3,9 +3,8 @@ import axios from 'axios';
 import SearchResults from '../SearchResults/SearchResults';
 
 const SearchResultsPage = (props) => {
-    debugger;
-    const searchResults = getSearchResults(props.searchTerm).catch(console.error);
-    debugger;
+    //const searchResults = getSearchResults(props.searchTerm).catch(console.error);
+    const searchResults = require('../../hooks/sampleOutput.json')
 
     if (searchResults) {
         return (

@@ -11,7 +11,7 @@ const SearchResults = (props) => {
             title: result.snippet.title,
             description: result.snippet.description,
             thumbnail: result.snippet.thumbnails.high,
-            creator: result.channelTitle
+            creator: result.snippet.channelTitle
         };
 
         return <VideoPreview video={video} />

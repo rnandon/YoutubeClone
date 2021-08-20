@@ -16,7 +16,7 @@ async function getPopularVideos() {
 
     console.log('data', response.data);
 }
-getPopularVideos().catch(console.error);
+//getPopularVideos().catch(console.error);
 
 // get search results
 const searchTerm = "f1"; // use this variable to store a search term, which is then inserted in axios request
@@ -26,7 +26,7 @@ async function getSearchResults() {
 
   console.log('data', response.data);
 }
-getSearchResults().catch(console.error);
+//getSearchResults().catch(console.error);
 
 // get a specific video using it's id
 const currentVideoId = "TJgUiZgX5rE";
@@ -36,7 +36,7 @@ async function getVideo() {
 
   console.log('video', response.data);
 }
-getVideo().catch(console.error);
+//getVideo().catch(console.error);
 
 // get a related videos using current VideoId
 // use the currentVideoId above
@@ -45,7 +45,7 @@ async function getRelatedVideos() {
 
   console.log('data', response.data);
 }
-getRelatedVideos().catch(console.error);
+//getRelatedVideos().catch(console.error);
 
 
 
