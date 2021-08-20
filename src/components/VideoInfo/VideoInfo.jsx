@@ -2,7 +2,7 @@ import React from 'react';
 
 const VideoInfo = (props) => {
     let videoInfo = props.videoInfo
-    debugger;
+    //debugger;
     /*
     layout concept:
     creator on left

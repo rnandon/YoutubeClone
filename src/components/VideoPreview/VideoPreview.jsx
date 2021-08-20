@@ -18,12 +18,21 @@ const VideoPreview = (props) => {
     */
 
 
-    return (
-        <Link to={`/video/${video.videoId}`}>
-            <VideoThumbnail imgurl={video.thumbnail} />
-            <VideoInfo videoInfo={videoInfo} />
-        </Link>
-    )
+    if (video.videoId) {
+        return (
+            <Link to={`/video/${video.videoId}`}>
+                <VideoThumbnail imgurl={video.thumbnail} />
+                <VideoInfo videoInfo={videoInfo} />
+            </Link>
+        )
+    } else {
+        return (
+            <Link to={`/video/${video.id}`}>
+                <VideoThumbnail imgurl={video.thumbnail} />
+                <VideoInfo videoInfo={videoInfo} />
+            </Link>
+        )
+    }
 }
 
 export default VideoPreview;

@@ -7,6 +7,7 @@ const SearchResults = (props) => {
     const results = searchResults.map((result) => {
         const video = {
             videoId: result.id.videoId,
+            id: result.id,
             title: result.snippet.title,
             description: result.snippet.description,
             thumbnail: result.snippet.thumbnails.high.url,

@@ -1,9 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-const HomePage = (props) => {
-    return (
-        <h1>Under construction</h1>
-    )
+import useWaitData from '../../hooks/useWaitData';
+import SearchResults from '../SearchResults/SearchResults';
+
+const HomePage = () => {
+    // API Request for popular youtube videos
+    let {videoData} = useWaitData('https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=8&regionCode=US&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg')
+
+    // create local state for popular videos results
+    let [outputResults, setOutputResults] = useState([])
+
+    // get access to the API request data and store it
+    useEffect(() => {
+        if (videoData.items) {
+            setOutputResults(videoData.items);
+        }
+    }, [videoData])
+
+    // send the data to be displayed or display default message
+    if (outputResults.length > 0) {
+        return (
+            <div>
+                <SearchResults searchResults={outputResults} />
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                Loading Videos
+            </div>
+        )
+    }
 }
 
 export default HomePage;

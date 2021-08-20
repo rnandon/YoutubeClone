@@ -13,15 +13,21 @@ import HomePage from './Pages/HomePage';
 // - Switch needs to call actual components instead of just the fragments below
 
 // get popular videos
-function getMostPopularVideos() {
-  getPopularVideos()
+async function getPopularVideos(data) {
+  const response = await axios.get('https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=8&regionCode=US&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg');
+
+  return {
+    data: {
+      data: response.data
+    }
+  }
 }
 
-async function getPopularVideos() {
-    const response = await axios.get('https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=8&regionCode=US&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg');
+//let data = [getPopularVideos()];
 
-    console.log('data', response.data);
-}
+// getPopularVideos(data).catch(console.error);
+//console.log('data items', data.items)
+
 //getPopularVideos().catch(console.error);
 
 // get search results
@@ -99,8 +105,8 @@ export default function App() {
 const Home = () => (
 
   <Fragment>
-    <h1>Home</h1>
-    <p></p>
+    <h1>Popular videos</h1>
+    <HomePage />
   </Fragment>
 )
 
