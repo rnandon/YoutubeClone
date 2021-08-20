@@ -6,12 +6,17 @@ import "./App.css";
 
 import SearchResultsPage from './Pages/SearchResultsPage';
 import VideoPlayerPage from './Pages/VideoPlayerPage';
+import HomePage from './Pages/HomePage';
 
 // Notes:
 // - Nav section will become the main navbar
 // - Switch needs to call actual components instead of just the fragments below
 
 // get popular videos
+function getMostPopularVideos() {
+  getPopularVideos()
+}
+
 async function getPopularVideos() {
     const response = await axios.get('https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=8&regionCode=US&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg');
 

@@ -1,7 +1,9 @@
 import React from 'react';
 
-export default HomePage = (props) => {
+const HomePage = (props) => {
     return (
         <h1>Under construction</h1>
     )
 }
+
+export default HomePage;
