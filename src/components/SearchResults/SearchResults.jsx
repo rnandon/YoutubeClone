@@ -10,7 +10,7 @@ const SearchResults = (props) => {
             videoId: result.id.videoId,
             title: result.snippet.title,
             description: result.snippet.description,
-            thumbnail: result.snippet.thumbnails.high,
+            thumbnail: result.snippet.thumbnails.high.url,
             creator: result.snippet.channelTitle
         };
 
