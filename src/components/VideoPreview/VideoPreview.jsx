@@ -5,6 +5,11 @@ import { Link } from 'react-router-dom';
 
 const VideoPreview = (props) => {
     const video = props.video;
+    const videoInfo = {
+        title: video.title,
+        description: video.description,
+        creator: video.creator
+    }
 
     /*
     layout concept:
@@ -16,7 +21,7 @@ const VideoPreview = (props) => {
     return (
         <Link to={`/video/${video.videoId}`}>
             <VideoThumbnail imgurl={video.thumbnail} />
-            <VideoInfo title={video.title} description={video.description} creator={video.creator} />
+            <VideoInfo videoInfo={videoInfo} />
         </Link>
     )
 }

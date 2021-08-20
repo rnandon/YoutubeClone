@@ -1,6 +1,8 @@
 import React from 'react';
 
 const VideoInfo = (props) => {
+    let videoInfo = props.videoInfo
+    debugger;
     /*
     layout concept:
     creator on left
@@ -8,9 +10,9 @@ const VideoInfo = (props) => {
     */
     return (
         <div>
-            <h1>{props.title}</h1>
-            <h2>{props.creator}</h2>
-            <h4>{props.description}</h4>
+            <h1>{videoInfo.title}</h1>
+            <h2>{videoInfo.creator}</h2>
+            <h4>{videoInfo.description}</h4>
         </div>
     )
 }

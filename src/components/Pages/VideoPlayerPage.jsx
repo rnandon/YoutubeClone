@@ -4,7 +4,7 @@ import RelatedVideos from '../RelatedVideos/RelatedVideos';
 // Import all the other components we'll need
 
 const VideoPlayerPage = (props) => {
-    const videoId = 0; // Passed in from props. Will be passed when a video is selected to watch
+    const videoId = props.videoId; // Passed in from props. Will be passed when a video is selected to watch
 
     /* 
     layout concept:

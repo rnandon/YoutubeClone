@@ -2,7 +2,6 @@ import React from 'react';
 import VideoPreview from '../VideoPreview/VideoPreview';
 
 const SearchResults = (props) => {
-    debugger;
     const searchResults = props.searchResults;
     // Map over results,  create array of VideoPreview objects
     const results = searchResults.map((result) => {
