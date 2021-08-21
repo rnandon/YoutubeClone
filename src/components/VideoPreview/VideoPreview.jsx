@@ -26,10 +26,12 @@ const VideoPreview = (props) => {
             </Link>
         )
     } else {
+        // this is for the home page results only
         return (
             <Link to={`/video/${video.id}`}>
                 <VideoThumbnail imgurl={video.thumbnail} />
-                <VideoInfo videoInfo={videoInfo} />
+                <h1>{videoInfo.title}</h1>
+                <h2>{videoInfo.creator}</h2>
             </Link>
         )
     }
