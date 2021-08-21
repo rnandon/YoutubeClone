@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import useGetComments from '../../hooks/useGetComments';
+// import useGetComments from '../../hooks/useGetComments';
 import Comment from '../Comment/Comment';
+import useWaitData from '../../hooks/useGetComments';
 
 
 // get comments from backend passing in videoId
@@ -9,25 +10,21 @@ import Comment from '../Comment/Comment';
 const Comments = (props) => {
     const videoId = props.videoId; 
     //let { comments } = useGetComments(`http://127.0.0.1:8000/video/${videoId}`)
-    let { comments } = useGetComments('http://127.0.0.1:8000/video/13BrslyeKac')
+    let { videoData } = useWaitData(`http://127.0.0.1:8000/video/${videoId}`)
 
-    console.log(comments);
-
-    let [videoComments, setComments] = useState({});
+    let [comments, setComments] = useState([]);
 
     useEffect(() => {
-        console.log(comments);
-        if (comments.data) {
-            setComments(comments.data);
+        console.log(videoData);
+        if (videoData) {
+            setComments(videoData);
         }
-    }, [comments])
+    }, [videoData])
 
-    if (videoComments.length > 0 ) {
-        console.log("video comments: " + videoComments[0].body)
+    if (comments.length > 0 ) {
+        console.log("video comments: " + comments[1].body)
         return (
-            <div>
-                <Comment comment={videoComments[0].body} />
-            </div>
+                <Comment comments={comments} />
         )
     } else {
         return (
