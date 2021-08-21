@@ -7,18 +7,26 @@ const Comment = (props) => {
     const videoComments = comments.map((comment) => {
         const commentInfo = {
             body: comment.body,
+            likes: comment.likes,
+            dislikes: comment.dislikes,
+
         };
         return (
                 <li>
-                    {commentInfo.body}
+                    Comment: {commentInfo.body}<br/>
+                    Likes: {commentInfo.likes}<br/>
+                    Dislikes: {commentInfo.dislikes}
                 </li>
         )
     })
 
     return (
-        <ul>
-            {videoComments}
-        </ul>
+        <div>
+            <h3>Video Comments</h3>
+                <ul>
+                    {videoComments}
+                </ul>
+        </div>
     )
 }
 

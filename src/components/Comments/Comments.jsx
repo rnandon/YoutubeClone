@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-// import useGetComments from '../../hooks/useGetComments';
 import Comment from '../Comment/Comment';
-import useWaitData from '../../hooks/useGetComments';
+import useWaitData from '../../hooks/useWaitData';
 
 
 // get comments from backend passing in videoId
@@ -9,7 +8,6 @@ import useWaitData from '../../hooks/useGetComments';
 // display comments sorted by likes
 const Comments = (props) => {
     const videoId = props.videoId; 
-    //let { comments } = useGetComments(`http://127.0.0.1:8000/video/${videoId}`)
     let { videoData } = useWaitData(`http://127.0.0.1:8000/video/${videoId}`)
 
     let [comments, setComments] = useState([]);
