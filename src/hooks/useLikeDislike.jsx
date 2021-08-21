@@ -33,3 +33,5 @@ const useLikeDislike = (comment) => {
 
     return {likes, like, dislikes, dislike};
 }
+
+export default useLikeDislike;
