@@ -9,13 +9,13 @@ const Comment = (props) => {
             body: comment.body,
             likes: comment.likes,
             dislikes: comment.dislikes,
-
         };
         return (
                 <li>
-                    Comment: {commentInfo.body}<br/>
-                    Likes: {commentInfo.likes}<br/>
-                    Dislikes: {commentInfo.dislikes}
+                    Comment:<br/>
+                        {commentInfo.body}<br/>
+                    <button>Likes: {commentInfo.likes} </button>
+                    <button>Dislikes: {commentInfo.dislikes}</button>
                 </li>
         )
     })

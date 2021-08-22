@@ -6,6 +6,7 @@ import useWaitData from '../../hooks/useWaitData';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import VideoInfo from '../VideoInfo/VideoInfo';
 import Comments from '../Comments/Comments';
+import AddCommentView from '../AddCommentView/AddCommentView';
 
 const Video = (props) => {
     const videoId = props.videoId;
@@ -37,6 +38,7 @@ const Video = (props) => {
             <div>
                 <VideoPlayer videoId={videoId} />
                 <VideoInfo videoInfo={videoInfo} />
+                <AddCommentView />
                 <Comments videoId={videoId} />
             </div>
         )
