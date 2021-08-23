@@ -20,7 +20,6 @@ const Comments = (props) => {
     }, [videoData])
 
     if (comments.length > 0 ) {
-        console.log("video comments: " + comments[1].body)
         return (
                 <Comment comments={comments} />
         )
