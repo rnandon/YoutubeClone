@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import useLikeDislike from '../../hooks/useLikeDislike'
+import Likes from '../Likes/Likes';
+//import useLikeDislike from '../../hooks/useLikeDislike'
 
 const Comment = (props) => {
     const comments = props.comments;
@@ -9,12 +10,13 @@ const Comment = (props) => {
             body: comment.body,
             likes: comment.likes,
             dislikes: comment.dislikes,
+            id: comment.id,
         };
         return (
                 <li>
                     Comment:<br/>
                         {commentInfo.body}<br/>
-                    <button>Likes: {commentInfo.likes} </button>
+                    <Likes commentInfo={commentInfo} />
                     <button>Dislikes: {commentInfo.dislikes}</button>
                 </li>
         )
