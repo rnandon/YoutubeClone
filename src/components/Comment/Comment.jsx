@@ -1,33 +1,70 @@
 import React, { useState } from 'react';
 import Likes from '../Likes/Likes';
-//import useLikeDislike from '../../hooks/useLikeDislike'
+import Reply from '../Reply/Reply';
+
 
 const Comment = (props) => {
     const comments = props.comments;
-    // iterate through comments to display them below video
-    const videoComments = comments.map((comment) => {
+
+    let parentComments = {};
+    let baseComments = [];
+
+    // check to see if comment is a parent comment, if not add it to baseComments
+    for (let i = 0; i < comments.length; i++) {
+        if (comments[i].parentComment) {
+            if (!parentComments[`${comments[i].parentComment}`]) {
+                parentComments[`${comments[i].parentComment}`] = [];
+            } 
+              parentComments[`${comments[i].parentComment}`].push(comments[i]);
+        } else {
+            baseComments.push(comments[i]);
+        }
+    }
+
+
+    // iterate through replies and comments to display them below video
+    const videoComments = baseComments.map((comment) => {
+        let replies = [];
+
+        if (parentComments[`${comment.id}`]) {
+            replies = parentComments[`${comment.id}`];
+            replies.map((reply) => {
+                const replyInfo = {
+                    body: reply.body,
+                    likes: reply.likes,
+                    dislikes: reply.dislikes,
+                    id: reply.id,
+                };
+
+                return (
+                    <Reply reply={reply} />
+                )
+            })
+        }
+
         const commentInfo = {
             body: comment.body,
             likes: comment.likes,
             dislikes: comment.dislikes,
             id: comment.id,
         };
+
+        // display like/dislike buttons
         return (
-                <li>
-                    Comment:<br/>
-                        {commentInfo.body}<br/>
-                    <Likes commentInfo={commentInfo} />
-                    <button>Dislikes: {commentInfo.dislikes}</button>
-                </li>
+            <div>
+                Comment:<br/>
+                    {commentInfo.body}<br/>
+                <Likes commentInfo={commentInfo} />
+                {replies}
+            </div>
         )
     })
 
     return (
         <div>
             <h3>Video Comments</h3>
-                <ul>
                     {videoComments}
-                </ul>
+
         </div>
     )
 }
@@ -38,35 +75,5 @@ const Comment = (props) => {
     // Once account info is built, this will need to be accessed here to control the like/comment/dislike functions
     // For now, we'll just use state
     //let {likes, like, dislikes, dislike} = useLikeDislike(comments);
-
-
-
-    /*
-    layout concept:
-    Comment author on left
-    Commment body next to that
-    likes and dislikes (w/ buttons) below
-    replies next to likes and dislikes
-
-    */
-
-    // return (
-    //     <div>
-    //         <div>
-    //             {/* {comment.author} */}
-    //         </div>
-    //         <div>
-    //             {commentInfo.body}
-    //         </div>
-    //         <div>
-    //             {/* <button onClick={like}> {likes} Like </button>
-    //             <button onClick={dislike}> {dislikes} Dislike </button> */}
-    //         </div>
-    //         <div>
-    //             {/* {replies[0]} */}
-    //         </div>
-    //     </div>
-    // ) 
-
 
 export default Comment;

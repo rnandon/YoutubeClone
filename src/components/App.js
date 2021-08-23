@@ -12,55 +12,6 @@ import HomePage from './Pages/HomePage';
 // - Nav section will become the main navbar
 // - Switch needs to call actual components instead of just the fragments below
 
-// get popular videos
-async function getPopularVideos(data) {
-  const response = await axios.get('https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=8&regionCode=US&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg');
-
-  return {
-    data: {
-      data: response.data
-    }
-  }
-}
-
-//let data = [getPopularVideos()];
-
-// getPopularVideos(data).catch(console.error);
-//console.log('data items', data.items)
-
-//getPopularVideos().catch(console.error);
-
-// get search results
-const searchTerm = "f1"; // use this variable to store a search term, which is then inserted in axios request
-
-async function getSearchResults() {
-  const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${searchTerm}&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg`);
-
-  console.log('data', response.data);
-}
-//getSearchResults().catch(console.error);
-
-// get a specific video using it's id
-const currentVideoId = "TJgUiZgX5rE";
-
-async function getVideo() {
-  const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${currentVideoId}&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg`);
-
-  console.log('video', response.data);
-}
-//getVideo().catch(console.error);
-
-// get a related videos using current VideoId
-// use the currentVideoId above
-async function getRelatedVideos() {
-  const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&relatedToVideoId=${currentVideoId}&type=video&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg`);
-
-  console.log('data', response.data);
-}
-//getRelatedVideos().catch(console.error);
-
-
-
 export default function App() {
   const name="john doe";
   let [searchTerm, setSearchTerm] = useState("");

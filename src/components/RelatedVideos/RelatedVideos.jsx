@@ -18,7 +18,7 @@ const RelatedVideos = (props) => {
 
     // videoData is actually related videos. See useWaitData implementation for more details on what it's doing.
     // For the purposes here, we give useWaitData a URL to get data from, and store that as videoData - it will automatically update when the data comes in.
-    let {videoData} = useWaitData(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&relatedToVideoId=${props.videoId}&type=video&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg`);
+    let {videoData} = useWaitData(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&relatedToVideoId=${props.videoId}&type=video&key=AIzaSyC2O3ybnnt7OD7m3rpYpYN50EzDk7qa5Ms`);
 
     // We're going to need the outputResults as a separate stateful variable so when its value is changed, the whole component refreshes.
     // This defaults to an empty array so we can check the length for rendering purposes.
