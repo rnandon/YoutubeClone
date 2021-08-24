@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 
 const useLikeDislike = (comment) => {
@@ -16,6 +17,17 @@ const useLikeDislike = (comment) => {
                 setDislikes(dislikes - 1);
             }
             // Send reply to backend
+            async function addLike() {
+                //get comment after liked
+                let response = await axios.get(`http://127.0.0.1:8000/comment/like/${comment.id}`);
+
+                if (response) {
+                    console.log("API Call is Good");
+                } else {
+                    console.log("API Call FAILED");
+                }
+            }
+            addLike()
         }
     }
 
@@ -28,6 +40,17 @@ const useLikeDislike = (comment) => {
                 setLikes(likes - 1);
             }
             // send reply to backend
+            async function addDislike() {
+                //get comment after disliked
+                let response = await axios.get(`http://127.0.0.1:8000/comment/dislike/${comment.id}`);
+
+                if (response) {
+                    console.log("API Call is Good");
+                } else {
+                    console.log("API Call FAILED");
+                }
+            }
+            addDislike()
         }
     }
 
