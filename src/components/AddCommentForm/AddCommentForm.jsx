@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
 // This form is for adding new comments
-const AddCommentForm = ({ getCommentForm }) => {
+const AddCommentForm = ({ postComment }) => {
     const [newComment, setComment] = useState([]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(newComment);
-        getCommentForm(newComment);
+        postComment(newComment);
         setComment('');
     }
 
