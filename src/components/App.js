@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { Fragment, useState } from 'react';
 import reactDom from 'react-dom';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';

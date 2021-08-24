@@ -56,11 +56,10 @@ const Comment = (props) => {
         // display like/dislike buttons
         return (
             <div>
-                Comment:<br/>
-                    {commentInfo.body}<br/>
+                <p>{commentInfo.body}</p>
                 <Likes commentInfo={commentInfo} />
+                <p class="ms-5">{replies}</p>
                 <AddReplyView commentInfo={commentInfo} />
-                {replies}
             </div>
         )
     })
@@ -68,7 +67,7 @@ const Comment = (props) => {
     return (
         <div>
             <h3>Video Comments</h3>
-                    {videoComments}
+                {videoComments}
 
         </div>
     )

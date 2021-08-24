@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 
 import AddReplyForm from '../AddReplyForm/AddReplyForm';
 import addComment from '../../hooks/addComment';
-import Comment from '../Comment/Comment';
 
 // used to display addcomment form then send it to comment for display
 const AddReplyView = (props) => {
@@ -29,7 +27,7 @@ const AddReplyView = (props) => {
 
     return (
         <div class="ms-5">
-            <p>This is a Reply Message:  {newReply}</p>
+            <p>Replies:</p>
             <AddReplyForm postReply={postReply} />
         </div>
     );
