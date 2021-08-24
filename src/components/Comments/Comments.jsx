@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Comment from '../Comment/Comment';
 import useWaitData from '../../hooks/useWaitData';
+//import AddReplyView from '../AddReplyView/AddReplyView';
 
 
 // get comments from backend passing in videoId
@@ -13,7 +14,6 @@ const Comments = (props) => {
     let [comments, setComments] = useState([]);
 
     useEffect(() => {
-        console.log(videoData);
         if (videoData) {
             setComments(videoData);
         }
