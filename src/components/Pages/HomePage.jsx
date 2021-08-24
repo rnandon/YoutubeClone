@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import useWaitData from '../../hooks/useWaitData';
-import SearchResults from '../SearchResults/SearchResults';
+import HomeResults from '../HomeResults/HomeResults';
 
 const HomePage = () => {
     // API Request for popular youtube videos
@@ -22,7 +22,7 @@ const HomePage = () => {
     if (outputResults.length > 0) {
         return (
             <div>
-                <SearchResults searchResults={outputResults} />
+                <HomeResults searchResults={outputResults} />
             </div>
         )
     } else {
