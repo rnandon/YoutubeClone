@@ -23,15 +23,21 @@ const VideoPreview = (props) => {
     if (type==="search") {
         // Thumbnail on left, info on right
         return (
-            <Link to={`/video/${video.videoId}`} className="col-sm-8 col-xs-10">
-                <VideoThumbnail imgurl={video.thumbnail} className="col-xs-4" />
-                <VideoInfo videoInfo={videoInfo} className="col-xs-8" />
+            <Link to={`/video/${video.videoId}`} className="col-sm-8 col-xs-10 m-5">
+                <div className="row w-100 m-5" >
+                    <div className="col-4" >
+                        <VideoThumbnail imgurl={video.thumbnail} className="w-100" />
+                    </div>
+                    <div className="col-8" >
+                        <VideoInfo videoInfo={videoInfo} className="w-100" />
+                    </div>
+                </div>    
             </Link>
         )
     } else if (type==="home") {
         // Thumbnail on top, info under
         return (
-            <Link to={`/video/${video.id}`} className="col-sm-3 col-xs-10 m-5 align-items-center max-width">
+            <Link to={`/video/${video.id}`} className="col-sm-3 col-xs-10 m-5 align-items-center max-width-30">
                 <div className="" >
                     <VideoThumbnail imgurl={video.thumbnail} className="align-items-center w-100" />
                 </div>

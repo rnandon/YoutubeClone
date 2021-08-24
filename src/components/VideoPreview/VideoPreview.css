@@ -11,6 +11,6 @@ VideoThumbnail {
     height: auto;
 }
 
-.max-width {
+.max-width-30 {
     max-width: 30%;
 }

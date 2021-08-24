@@ -14,7 +14,7 @@ const SearchResults = (props) => {
             creator: result.snippet.channelTitle
         };
 
-        return <VideoPreview video={video} />
+        return <VideoPreview video={video} type="search" className="m-5" />
     })
 
 
