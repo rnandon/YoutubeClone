@@ -1,3 +1,8 @@
 .limit-width {
     max-width: 100%;
 }
+
+.color-text {
+    color: white;
+    text-decoration: none;
+}
