@@ -57,7 +57,7 @@ const Home = () => (
 // Will become the search page, parameters need to change to search query
 const Search = ({match:{params:{searchTerm}}}) => (
   <Fragment>
-    <h1>About {searchTerm}</h1>
+    <h1>Results for {searchTerm}</h1>
     <SearchResultsPage searchTerm={searchTerm} />
   </Fragment>
   );
@@ -65,7 +65,6 @@ const Search = ({match:{params:{searchTerm}}}) => (
   // Will become the video player page, parameters need to change to video id
 const Video = ({match:{params:{videoId}}}) => (
   <Fragment>
-    <h1>Watching {videoId}</h1>
     <VideoPlayerPage videoId={videoId} />
   </Fragment>
   );
