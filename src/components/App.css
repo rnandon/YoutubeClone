@@ -38,3 +38,9 @@
     transform: rotate(360deg);
   }
 }
+
+#searchButton {
+  background-color: white;
+  font-size: 20px;
+  
+}

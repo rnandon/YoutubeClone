@@ -37,13 +37,13 @@ const VideoPreview = (props) => {
     } else if (type==="home") {
         // Thumbnail on top, info under
         return (
-            <Link to={`/video/${video.id}`} className="col-sm-3 col-xs-10 m-5 align-items-center max-width-30">
+            <Link to={`/video/${video.id}`} className="col-md-3 col-xs-10 m-5 ps-5 pe-5 align-items-center text-decoration-none text-light">
                 <div className="" >
                     <VideoThumbnail imgurl={video.thumbnail} className="align-items-center w-100" />
                 </div>
                 <div className="col-xs-10 text-center w-100">
-                    <h1 className="text-dark">{videoInfo.title}</h1>
-                    <h2 className="text-dark">{videoInfo.creator}</h2>
+                    <h1 className="">{videoInfo.title}</h1>
+                    <h2 className="">{videoInfo.creator}</h2>
                 </div>
             </Link>
         )

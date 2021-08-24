@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import reactDom from 'react-dom';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import "./App.css";
+import image from '../components/images/youtubelogo.png';
 
 import SearchResultsPage from './Pages/SearchResultsPage';
 import VideoPlayerPage from './Pages/VideoPlayerPage';
@@ -17,6 +18,7 @@ export default function App() {
     setSearchTerm(event.target.value);
   }
 
+  //<img src={image} alt="youtubelogo"></img>
 
   return (
     <Router>
@@ -27,7 +29,7 @@ export default function App() {
             <form class="d-flex col-sm-5">
               <input class="form-control me-2" type="search" placeholder="Search" value={searchTerm} onChange={handleChange} aria-label="Search" />
               <Link to={`/search/${searchTerm}`}>
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn" id="searchButton" type="submit">Search</button>
               </Link>
             </form>
             <div class="col-sm-2"></div>
