@@ -4,7 +4,7 @@ import axios from 'axios';
 import useWaitData from '../../hooks/useWaitData';
 
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
-import VideoInfo from '../VideoInfo/VideoInfo';
+import VideoPlayerInfo from '../VideoInfo/VideoPlayerInfo';
 import Comments from '../Comments/Comments';
 import AddCommentView from '../AddCommentView/AddCommentView';
 
@@ -37,7 +37,7 @@ const Video = (props) => {
         return (
             <div>
                 <VideoPlayer videoId={videoId} />
-                <VideoInfo videoInfo={videoInfo} />
+                <VideoPlayerInfo videoInfo={videoInfo} />
                 <AddCommentView videoId={videoId} />
                 <Comments videoId={videoId} />
             </div>
