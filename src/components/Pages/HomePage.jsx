@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import useWaitData from '../../hooks/useWaitData';
 import HomeResults from '../HomeResults/HomeResults';
 
-import './HomePage.css';
+import './Pages.css';
 
 const HomePage = () => {
     // API Request for popular youtube videos
@@ -29,7 +29,7 @@ const HomePage = () => {
         )
     } else {
         return (
-            <div class="border border-white">
+            <div>
                 Loading Videos
             </div>
         )

@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoPreview from '../VideoPreview/VideoPreview';
+import './SearchResults';
 
 const SearchResults = (props) => {
     const searchResults = props.searchResults;
@@ -14,7 +15,11 @@ const SearchResults = (props) => {
             creator: result.snippet.channelTitle
         };
 
-        return <VideoPreview video={video} type="search" className="m-5" />
+        return (
+            <div id="searchHover">
+                <VideoPreview video={video} type="search" className="m-5" />
+            </div>
+        )
     })
 
 

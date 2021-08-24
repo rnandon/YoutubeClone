@@ -23,15 +23,15 @@ export default function App() {
   return (
     <Router>
       <main>
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-dark">
           <div class="container-fluid py-3">
             <Link to="/" class="navbar-brand col-sm-3"><h1>YouTubeClone</h1></Link>
-            <form class="d-flex col-sm-5">
-              <input class="form-control me-2" type="search" placeholder="Search" value={searchTerm} onChange={handleChange} aria-label="Search" />
-              <Link to={`/search/${searchTerm}`}>
-                <button class="btn" id="searchButton" type="submit">Search</button>
-              </Link>
-            </form>
+              <form class="d-flex col-sm-5">
+                <input class="form-control me-2" type="search" placeholder="Search" value={searchTerm} onChange={handleChange} aria-label="Search" />
+                <Link to={`/search/${searchTerm}`}>
+                  <button class="btn" id="searchButton" type="submit"><i class="fa fa-search"></i></button>
+                </Link>
+              </form>
             <div class="col-sm-2"></div>
           </div>
         </nav>

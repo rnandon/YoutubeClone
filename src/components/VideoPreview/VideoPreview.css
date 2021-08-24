@@ -23,3 +23,12 @@ VideoThumbnail {
     border-radius: 15px;
     color: #474747;
 }
+
+#searchHover {
+    color: white;
+}
+#searchHover:hover {
+    background-color: #717171;
+    border-radius: 15px;
+    color: #474747;
+}

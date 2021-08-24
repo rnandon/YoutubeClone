@@ -19,6 +19,7 @@ const SearchResultsPage = (props) => {
         console.log("Output results: " + outputResults);
         return (
             <div>
+                <h2 class="text-center py-3">Results for {props.searchTerm}</h2>
                 <SearchResults searchResults={outputResults} />
             </div>
         )
