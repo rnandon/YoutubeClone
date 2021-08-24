@@ -29,16 +29,18 @@ const RelatedVideos = (props) => {
     // Check if we have data back
     if (outputResults.length > 0) {
         // If we have data, process it
-        const relatedVideos = outputResults.map((relatedVideo) => { 
-            const video = {
-                videoId: relatedVideo.id.videoId,
-                title: relatedVideo.snippet.title,
-                description: relatedVideo.snippet.description,
-                thumbnail: relatedVideo.snippet.thumbnails.medium.url,
-                creator: relatedVideo.snippet.channelTitle
-            };
+        const relatedVideos = outputResults.map((relatedVideo) => {
+            if (relatedVideo.snippet) {
+                const video = {
+                    videoId: relatedVideo.id.videoId,
+                    title: relatedVideo.snippet.title,
+                    description: relatedVideo.snippet.description,
+                    thumbnail: relatedVideo.snippet.thumbnails.medium.url,
+                    creator: relatedVideo.snippet.channelTitle
+                };
 
-            return (<VideoPreview video={video} type="related" />) 
+                return (<VideoPreview video={video} type="related" />) 
+            }
         });
         return (
             <div>
