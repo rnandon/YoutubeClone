@@ -10,6 +10,8 @@ const Comment = (props) => {
     let parentComments = {};
     let baseComments = [];
 
+    debugger;
+
     // check to see if comment is a parent comment, if not add it to baseComments
     for (let i = 0; i < comments.length; i++) {
         if (comments[i].parentComment) {
@@ -28,8 +30,7 @@ const Comment = (props) => {
         let replies = [];
 
         if (parentComments[`${comment.id}`]) {
-            replies = parentComments[`${comment.id}`];
-            replies.map((reply) => {
+            replies = parentComments[`${comment.id}`].map((reply) => {
                 const replyInfo = {
                     body: reply.body,
                     likes: reply.likes,
