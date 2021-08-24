@@ -12,7 +12,7 @@ const Video = (props) => {
     const videoId = props.videoId;
     let [videoInfo, setVideoInfo] = useState(false);
 
-    let {videoData} = useWaitData(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=AIzaSyC2O3ybnnt7OD7m3rpYpYN50EzDk7qa5Ms`);
+    let {videoData} = useWaitData(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg`);
 
     
     useEffect(() => {

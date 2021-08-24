@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Likes from '../Likes/Likes';
 import Reply from '../Reply/Reply';
+import AddReplyView from '../AddReplyView/AddReplyView';
 
 
 const Comment = (props) => {
@@ -37,6 +38,7 @@ const Comment = (props) => {
                 };
 
                 return (
+                    // display replies
                     <Reply reply={reply} />
                 )
             })
@@ -47,6 +49,7 @@ const Comment = (props) => {
             likes: comment.likes,
             dislikes: comment.dislikes,
             id: comment.id,
+            videoId: comment.videoId,
         };
 
         // display like/dislike buttons
@@ -55,6 +58,7 @@ const Comment = (props) => {
                 Comment:<br/>
                     {commentInfo.body}<br/>
                 <Likes commentInfo={commentInfo} />
+                <AddReplyView commentInfo={commentInfo} />
                 {replies}
             </div>
         )
