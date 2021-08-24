@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 
 import useWaitData from '../../hooks/useWaitData';
 import HomeResults from '../HomeResults/HomeResults';
+
+import './HomePage.css';
 
 const HomePage = () => {
     // API Request for popular youtube videos
@@ -22,12 +23,13 @@ const HomePage = () => {
     if (outputResults.length > 0) {
         return (
             <div>
+                <h2 class="text-center py-3" id="popularVideos">Popular videos</h2>
                 <HomeResults searchResults={outputResults} />
             </div>
         )
     } else {
         return (
-            <div>
+            <div class="border border-white">
                 Loading Videos
             </div>
         )

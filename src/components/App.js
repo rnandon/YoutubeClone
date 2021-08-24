@@ -24,8 +24,8 @@ export default function App() {
     <Router>
       <main>
         <nav class="navbar navbar-dark bg-dark">
-          <div class="container-fluid">
-            <Link to="/" class="navbar-brand col-sm-3">YouTubeClone</Link>
+          <div class="container-fluid py-3">
+            <Link to="/" class="navbar-brand col-sm-3"><h1>YouTubeClone</h1></Link>
             <form class="d-flex col-sm-5">
               <input class="form-control me-2" type="search" placeholder="Search" value={searchTerm} onChange={handleChange} aria-label="Search" />
               <Link to={`/search/${searchTerm}`}>
@@ -50,22 +50,27 @@ export default function App() {
 const Home = () => (
 
   <Fragment>
-    <h1>Popular videos</h1>
-    <HomePage />
+    <div class="container-fluid">
+      <HomePage />
+    </div>
   </Fragment>
 )
 
 // Will become the search page, parameters need to change to search query
 const Search = ({match:{params:{searchTerm}}}) => (
   <Fragment>
-    <h1>Results for {searchTerm}</h1>
-    <SearchResultsPage searchTerm={searchTerm} />
+    <div class="container-fluid me-3">
+      <h1>Results for {searchTerm}</h1>
+      <SearchResultsPage searchTerm={searchTerm} />
+    </div>
   </Fragment>
   );
 
   // Will become the video player page, parameters need to change to video id
 const Video = ({match:{params:{videoId}}}) => (
   <Fragment>
-    <VideoPlayerPage videoId={videoId} />
+    <div class="container-fluid me-3">
+      <VideoPlayerPage videoId={videoId} />
+    </div>
   </Fragment>
   );

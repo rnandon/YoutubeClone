@@ -14,3 +14,12 @@ VideoThumbnail {
 .max-width-30 {
     max-width: 30%;
 }
+
+#linkHover {
+    color: white;
+}
+#linkHover:hover {
+    background-color: #717171;
+    border-radius: 15px;
+    color: #474747;
+}

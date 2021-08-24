@@ -24,11 +24,11 @@ const VideoPreview = (props) => {
         // Thumbnail on left, info on right
         return (
             <Link to={`/video/${video.videoId}`} className="col-sm-8 col-xs-10 m-5">
-                <div className="row w-100 m-5" >
+                <div className="row w-100 m-5">
                     <div className="col-4" >
                         <VideoThumbnail imgurl={video.thumbnail} className="w-100" />
                     </div>
-                    <div className="col-8" >
+                    <div className="col-8">
                         <VideoInfo videoInfo={videoInfo} className="w-100" />
                     </div>
                 </div>    
@@ -37,7 +37,7 @@ const VideoPreview = (props) => {
     } else if (type==="home") {
         // Thumbnail on top, info under
         return (
-            <Link to={`/video/${video.id}`} className="col-md-3 col-xs-10 m-5 ps-5 pe-5 align-items-center text-decoration-none text-light">
+            <Link to={`/video/${video.id}`} className="col-lg-3 col-xs-10 m-3 ps-3 pe-3 align-items-center text-decoration-none" id="linkHover">
                 <div className="" >
                     <VideoThumbnail imgurl={video.thumbnail} className="align-items-center w-100" />
                 </div>
