@@ -27,7 +27,6 @@ const AddReplyView = (props) => {
 
     return (
         <div class="ms-5">
-            <p>Replies:</p>
             <AddReplyForm postReply={postReply} />
         </div>
     );

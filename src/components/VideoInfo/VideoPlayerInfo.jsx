@@ -1,18 +1,19 @@
 import React from 'react';
+import './VideoInfo.css';
 
 const VideoPlayerInfo = (props) => {
     return (
-        <div className="accordion color-text" id="accordionExample">
+        <div className="accordion color-text" id="accordionBg">
             <h1>{props.videoInfo.title}</h1>
             <h2>{props.videoInfo.creator}</h2>
             <div className="accordion-item">
                 <h2 className="accordion-header" id="headingOne">
-                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button className="accordion-button bg-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Description
                     </button>
                 </h2>
-                <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div className="accordion-body">
+                <div id="collapseOne" className="accordion-collapse collapse show " aria-labelledby="headingOne" data-bs-parent="#accordionBg">
+                <div className="accordion-body bg-secondary">
                     <p>{props.videoInfo.description}</p>
                 </div>
                 </div>

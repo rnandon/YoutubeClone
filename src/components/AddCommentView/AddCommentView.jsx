@@ -21,14 +21,9 @@ const AddComment = (props) => {
         addComment(`http://127.0.0.1:8000/video/${videoId}`, commentInfo);
     }
 
-    
-
-
-
     return (
         <div>
-            
-            <p>A Comment:  {newComment}</p>
+            <h3>Video Comments</h3>
             <AddCommentForm postComment={postComment} />
         </div>
     );

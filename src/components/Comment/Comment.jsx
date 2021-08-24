@@ -66,9 +66,7 @@ const Comment = (props) => {
 
     return (
         <div>
-            <h3>Video Comments</h3>
                 {videoComments}
-
         </div>
     )
 }

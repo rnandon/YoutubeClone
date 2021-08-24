@@ -13,9 +13,8 @@ const AddCommentForm = ({ postComment }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label>Add a Comment here:</label>
             <br />
-                <textarea name="newComment" rows="3" cols="50" type="text" value={newComment}  onChange={(event) => setComment(event.target.value)} />
+                <input name="newComment" rows="3" cols="50" type="text" placeholder="Add a Comment here" value={newComment}  onChange={(event) => setComment(event.target.value)} />
             <br />
 
             <input type="submit" value="Submit" />
