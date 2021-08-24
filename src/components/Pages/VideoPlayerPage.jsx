@@ -12,9 +12,13 @@ const VideoPlayerPage = (props) => {
     related videos to the right pass videoId to get related videos from YouTube api
     */
     return (
-        <div>
-            <Video videoId={videoId} />
-            <RelatedVideos videoId={videoId} />
+        <div className="row" >
+            <div className="col-xs-10 col-sm-7 m-0">
+                <Video videoId={videoId} />
+            </div>
+            <div className="col-xs-10 col-sm-4 m-0">
+                <RelatedVideos videoId={videoId} />
+            </div>
         </div>
     );
 }

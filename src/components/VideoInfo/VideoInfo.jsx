@@ -9,10 +9,10 @@ const VideoInfo = (props) => {
     description next to that
     */
     return (
-        <div>
-            <h1>{videoInfo.title}</h1>
-            <h2>{videoInfo.creator}</h2>
-            <h4>{videoInfo.description}</h4>
+        <div className="card-body overflow-hidden">
+            <h5 className="card-title overflow-hidden mh-25">{videoInfo.title}</h5>
+            <p className="card-text overflow-hidden mh-25">{videoInfo.creator}</p>
+            <p className="card-text overflow-hidden mh-50">{videoInfo.description}</p>
         </div>
     )
 }

@@ -62,7 +62,6 @@ async function getRelatedVideos() {
 
 
 export default function App() {
-  const name="john doe";
   let [searchTerm, setSearchTerm] = useState("");
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -72,25 +71,19 @@ export default function App() {
   return (
     <Router>
       <main>
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-dark bg-dark">
           <div class="container-fluid">
-            <Link to="/" class="navbar-brand">Navbar</Link>
-            <form class="d-flex">
+            <Link to="/" class="navbar-brand col-sm-3">YouTubeClone</Link>
+            <form class="d-flex col-sm-5">
               <input class="form-control me-2" type="search" placeholder="Search" value={searchTerm} onChange={handleChange} aria-label="Search" />
               <Link to={`/search/${searchTerm}`}>
                 <button class="btn btn-outline-success" type="submit">Search</button>
               </Link>
             </form>
+            <div class="col-sm-2"></div>
           </div>
         </nav>
 
-        <div>
-          <h1>Hello</h1>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to={`/search/${searchTerm}`}>Search</Link></li>
-          </ul>
-        </div>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/search/:searchTerm"  component={Search} />
