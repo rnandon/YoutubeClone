@@ -13,10 +13,10 @@ const VideoPlayerPage = (props) => {
     */
     return (
         <div className="row" >
-            <div className="col-xs-10 col-sm-7 m-0">
+            <div className="col-xs-10 col-sm-7 m-3">
                 <Video videoId={videoId} />
             </div>
-            <div className="col-xs-10 col-sm-4 m-0">
+            <div className="col-xs-10 col-sm-4 m-3">
                 <RelatedVideos videoId={videoId} />
             </div>
         </div>

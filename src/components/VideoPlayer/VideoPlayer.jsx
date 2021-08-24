@@ -7,7 +7,9 @@ const VideoPlayer = (props) => {
 
     // Need custom CSS to set up screen size for iframe.
     return (
-        <iframe width="560" height="315" src={videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div className="ratio ratio-16x9">
+            <iframe className="w-100 h-100" src={videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     )
 }
 
