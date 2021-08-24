@@ -4,7 +4,7 @@ const VideoThumbnail = (props) => {
 
     // just return a formatted image from the thumbnail url
     return (
-        <img src={props.imgurl}  className="m-1" />
+        <img src={props.imgurl}  className="w-100" />
     )
 }
 

@@ -10,3 +10,7 @@ VideoThumbnail {
     max-width: 100%;
     height: auto;
 }
+
+.max-width {
+    max-width: 30%;
+}
