@@ -23,7 +23,9 @@ const HomePage = () => {
     if (outputResults.length > 0) {
         return (
             <div>
-                <h2 class="text-center py-3" id="popularVideos">Popular videos</h2>
+                <div>
+                <p class="text-center py-3" id="popularVideos">Popular Videos</p>
+                </div>
                 <HomeResults searchResults={outputResults} />
             </div>
         )

@@ -25,9 +25,9 @@ export default function App() {
       <main>
         <nav class="navbar navbar-dark">
           <div class="container-fluid py-3">
-            <Link to="/" class="navbar-brand col-sm-3"><h1>YouTubeClone</h1></Link>
+            <Link to="/" class="navbar-brand col-sm-3"><h1 id="header">YouTubeClone</h1></Link>
               <form class="d-flex col-sm-5">
-                <input class="form-control me-2" type="search" placeholder="Search" value={searchTerm} onChange={handleChange} aria-label="Search" />
+                <input class="form-control me-2" id="searchbar" type="search" placeholder="Search" value={searchTerm} onChange={handleChange} aria-label="Search" />
                 <Link to={`/search/${searchTerm}`}>
                   <button class="btn" id="searchButton" type="submit"><i class="fa fa-search"></i></button>
                 </Link>

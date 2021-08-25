@@ -1,3 +1,8 @@
 .limit-width {
     max-width: 100%;
 }
+
+#thumbnail {
+    width: 50%;
+    height: auto;
+}

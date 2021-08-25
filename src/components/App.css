@@ -38,12 +38,25 @@
     transform: rotate(360deg);
   }
 }
-
+#searchbar {
+  border-radius: 50px;
+}
 #searchButton {
-  background-color: white;
+  color: #FAF9F6;
+  background-color: #965B6A;
   font-size: 20px;
+  border-radius: 50px;
 }
 
 nav {
   background-color: #474747;
+}
+
+#header {
+  color: #FAF9F6;
+  padding: 4%;
+  margin-left: 1%;
+  border-radius: 50px;
+  display: inline-block;
+  background-color: #FF0000;
 }

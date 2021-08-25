@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchResults from '../SearchResults/SearchResults';
 import useWaitData from '../../hooks/useWaitData';
+import './Pages.css';
 
 const SearchResultsPage = (props) => {
     // videoData is actually search results
@@ -19,14 +20,14 @@ const SearchResultsPage = (props) => {
         console.log("Output results: " + outputResults);
         return (
             <div>
-                <h2 class="text-center py-3">Results for {props.searchTerm}</h2>
+                <p class="text-center py-3" id="popularVideos">Results for {props.searchTerm}</p>
                 <SearchResults searchResults={outputResults} />
             </div>
         )
     } else {
         return (
-            <div>
-                Gathering Search results
+            <div id="popularVideos">
+                Gathering Search results...
             </div>
         )
     }

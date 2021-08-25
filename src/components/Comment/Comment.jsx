@@ -49,8 +49,8 @@ const Comment = (props) => {
         // display like/dislike buttons
         return (
             <div className="bottom-border">
-                <div className="m-1">
-                    <p className="m-0" >{commentInfo.body}</p>
+                <div className="mt-3">
+                    <p className="mb-3" >{commentInfo.body}</p>
                     <Likes commentInfo={commentInfo} />
                 </div>
                 <div className="m-1">

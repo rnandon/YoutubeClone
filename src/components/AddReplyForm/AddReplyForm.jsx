@@ -12,7 +12,7 @@ const AddReplyForm = ({ postReply }) => {
     }
 
     return (
-        <form onSubmit={handleSubmit} class="ms-4">
+        <form onSubmit={handleSubmit} class="ms-4 mb-3">
             <div class="mb-3">
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Reply..." value={newReply}  onChange={(event) => setNewReply(event.target.value)} />
             </div>

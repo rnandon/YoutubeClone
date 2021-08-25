@@ -8,12 +8,12 @@ const Reply = (props) => {
 
     return (
         <div className="bottom-border">
-            <div className="m-1">
+            <div className="mt-3 mb-3">
                 {reply.body}
             </div>
             <div>
-                <button onClick={like}  className="btn btn-secondary btn-sm"> {likes} Like</button>
-                <button onClick={dislike}  className="btn btn-secondary btn-sm"> {dislikes} Dislike</button>
+                <button onClick={like}  className="btn btn-secondary btn-sm me-3 mb-3"> {likes} Like</button>
+                <button onClick={dislike}  className="btn btn-secondary btn-sm mb-3"> {dislikes} Dislike</button>
             </div>
         </div>
     )

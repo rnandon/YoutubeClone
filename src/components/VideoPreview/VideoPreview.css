@@ -21,7 +21,8 @@ VideoThumbnail {
 #linkHover:hover {
     background-color: #717171;
     border-radius: 15px;
-    color: #474747;
+    color: black;
+    padding: 10px;
 }
 
 #searchHover {
@@ -31,4 +32,10 @@ VideoThumbnail {
     background-color: #717171;
     border-radius: 15px;
     color: #474747;
+}
+
+#thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
