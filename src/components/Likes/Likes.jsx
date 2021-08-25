@@ -11,8 +11,8 @@ const Likes = (props) => {
 
     return (
         <div>
-            <button onClick={like}>Likes {likes}</button>
-            <button onClick={dislike}>Dislikes {dislikes}</button>
+            <button onClick={like} className="btn btn-secondary btn-sm">Likes {likes}</button>
+            <button onClick={dislike} className="btn btn-secondary btn-sm">Dislikes {dislikes}</button>
         </div>
     )
 }

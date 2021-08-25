@@ -26,7 +26,7 @@ const AddReplyView = (props) => {
     }
 
     return (
-        <div class="ms-5">
+        <div class="ms-4">
             <AddReplyForm postReply={postReply} />
         </div>
     );

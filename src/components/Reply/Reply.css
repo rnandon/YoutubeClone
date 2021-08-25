@@ -1,0 +1,6 @@
+.bottom-border {
+    
+    border-bottom: slategray;
+    border-bottom-width: 4px;
+    border-bottom-style: groove;
+}

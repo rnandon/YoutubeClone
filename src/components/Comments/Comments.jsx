@@ -21,7 +21,7 @@ const Comments = (props) => {
 
     if (comments.length > 0 ) {
         return (
-                <Comment comments={comments} />
+            <Comment comments={comments} />
         )
     } else {
         return (

@@ -1,18 +1,19 @@
 import React from 'react';
 import useLikeDislike from '../../hooks/useLikeDislike'
+import './Reply.css';
 
 const Reply = (props) => {
     const reply = props.reply; // Pass this into the prop, need contents and data for backend calls
     let {likes, like, dislikes, dislike} = useLikeDislike(reply);
 
     return (
-        <div>
-            <div>
+        <div className="bottom-border">
+            <div className="m-1">
                 {reply.body}
             </div>
             <div>
-                <button onClick={like} > {likes} Like</button>
-                <button onClick={dislike} > {dislikes} Dislike</button>
+                <button onClick={like}  className="btn btn-secondary btn-sm"> {likes} Like</button>
+                <button onClick={dislike}  className="btn btn-secondary btn-sm"> {dislikes} Dislike</button>
             </div>
         </div>
     )

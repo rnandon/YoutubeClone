@@ -13,11 +13,11 @@ const AddCommentForm = ({ postComment }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <br />
-                <input name="newComment" rows="3" cols="50" type="text" placeholder="Add a Comment here" value={newComment}  onChange={(event) => setComment(event.target.value)} />
-            <br />
+            <div class="mb-3">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Comment..." value={newComment}  onChange={(event) => setComment(event.target.value)} />
+            </div>
 
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit Comment" className="btn btn-secondary" />
         </form>
     )
 }

@@ -13,12 +13,11 @@ const AddReplyForm = ({ postReply }) => {
 
     return (
         <form onSubmit={handleSubmit} class="ms-4">
-            <label>Add a Reply:</label>
-            <br />
-                <textarea name="newComment" rows="3" cols="50" type="text" value={newReply}  onChange={(event) => setNewReply(event.target.value)} />
-            <br />
+            <div class="mb-3">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Reply..." value={newReply}  onChange={(event) => setNewReply(event.target.value)} />
+            </div>
 
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit Reply" className="btn btn-secondary" />
         </form>
     )
 }

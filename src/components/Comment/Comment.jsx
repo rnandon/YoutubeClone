@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Likes from '../Likes/Likes';
 import Reply from '../Reply/Reply';
 import AddReplyView from '../AddReplyView/AddReplyView';
+import './Comment.css';
 
 
 const Comment = (props) => {
@@ -9,8 +10,6 @@ const Comment = (props) => {
 
     let parentComments = {};
     let baseComments = [];
-
-    debugger;
 
     // check to see if comment is a parent comment, if not add it to baseComments
     for (let i = 0; i < comments.length; i++) {
@@ -31,12 +30,6 @@ const Comment = (props) => {
 
         if (parentComments[`${comment.id}`]) {
             replies = parentComments[`${comment.id}`].map((reply) => {
-                const replyInfo = {
-                    body: reply.body,
-                    likes: reply.likes,
-                    dislikes: reply.dislikes,
-                    id: reply.id,
-                };
 
                 return (
                     // display replies
@@ -55,11 +48,15 @@ const Comment = (props) => {
 
         // display like/dislike buttons
         return (
-            <div>
-                <p>{commentInfo.body}</p>
-                <Likes commentInfo={commentInfo} />
-                <p class="ms-5">{replies}</p>
-                <AddReplyView commentInfo={commentInfo} />
+            <div className="bottom-border">
+                <div className="m-1">
+                    <p className="m-0" >{commentInfo.body}</p>
+                    <Likes commentInfo={commentInfo} />
+                </div>
+                <div className="m-1">
+                    <p class="ms-5">{replies}</p>
+                    <AddReplyView commentInfo={commentInfo} />
+                </div>
             </div>
         )
     })

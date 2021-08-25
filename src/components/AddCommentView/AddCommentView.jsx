@@ -15,8 +15,9 @@ const AddComment = (props) => {
         setComment(newComment);
         
         // create the new comment to be posted on the backend
+        debugger;
         const commentInfo = {
-            body: newComment,
+            "body": newComment,
         }
         addComment(`http://127.0.0.1:8000/video/${videoId}`, commentInfo);
     }
