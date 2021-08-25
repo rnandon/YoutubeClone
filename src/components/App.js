@@ -50,7 +50,7 @@ export default function App() {
 const Home = () => (
 
   <Fragment>
-    <div class="container-fluid">
+    <div id="page" class="container-fluid">
       <HomePage />
     </div>
   </Fragment>
@@ -59,7 +59,7 @@ const Home = () => (
 // Will become the search page, parameters need to change to search query
 const Search = ({match:{params:{searchTerm}}}) => (
   <Fragment>
-    <div class="container-fluid me-3">
+    <div id="page" class="container-fluid me-3">
       <h1>Results for {searchTerm}</h1>
       <SearchResultsPage searchTerm={searchTerm} />
     </div>
@@ -69,7 +69,7 @@ const Search = ({match:{params:{searchTerm}}}) => (
   // Will become the video player page, parameters need to change to video id
 const Video = ({match:{params:{videoId}}}) => (
   <Fragment>
-    <div class="container-fluid me-3">
+    <div id="page" class="container-fluid me-3">
       <VideoPlayerPage videoId={videoId} />
     </div>
   </Fragment>

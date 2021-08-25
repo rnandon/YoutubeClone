@@ -22,9 +22,9 @@ const HomePage = () => {
     // send the data to be displayed or display default message
     if (outputResults.length > 0) {
         return (
-            <div>
+            <div id="page">
                 <div>
-                <p class="text-center py-3" id="popularVideos">Popular Videos</p>
+                    <p class="text-center py-3" id="popularVideos">Popular Videos</p>
                 </div>
                 <HomeResults searchResults={outputResults} />
             </div>
