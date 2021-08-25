@@ -38,8 +38,6 @@ const Video = (props) => {
             <div>
                 <VideoPlayer videoId={videoId} />
                 <VideoPlayerInfo videoInfo={videoInfo} />
-                <AddCommentView videoId={videoId} />
-                <p></p>
                 <Comments videoId={videoId} />
             </div>
         )

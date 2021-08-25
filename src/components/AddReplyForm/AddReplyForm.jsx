@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 // This form is for adding new comments
 const AddReplyForm = ({ postReply }) => {
-    const [newReply, setNewReply] = useState([]);
+    const [newReply, setNewReply] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();

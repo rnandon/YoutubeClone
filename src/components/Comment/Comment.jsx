@@ -22,6 +22,7 @@ const Comment = (props) => {
             baseComments.push(comments[i]);
         }
     }
+    debugger;
 
 
     // iterate through replies and comments to display them below video
@@ -55,7 +56,7 @@ const Comment = (props) => {
                 </div>
                 <div className="m-1">
                     <p class="ms-5">{replies}</p>
-                    <AddReplyView commentInfo={commentInfo} />
+                    <AddReplyView commentInfo={commentInfo} postComment={props.postComment} />
                 </div>
             </div>
         )

@@ -22,7 +22,7 @@ const AddReplyView = (props) => {
             parentComment: commentInfo.id,
             videoId: commentInfo.videoId,
         }
-        addComment(`http://127.0.0.1:8000/video/${videoId}`, replyInfo);
+        props.postComment(`http://127.0.0.1:8000/video/${videoId}`, replyInfo);
     }
 
     return (

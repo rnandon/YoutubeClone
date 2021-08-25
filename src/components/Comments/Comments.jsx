@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Comment from '../Comment/Comment';
-import useWaitData from '../../hooks/useWaitData';
+import useComments from '../../hooks/useComments';
+import AddCommentView from '../AddCommentView/AddCommentView';
 //import AddReplyView from '../AddReplyView/AddReplyView';
 
 
@@ -9,24 +10,30 @@ import useWaitData from '../../hooks/useWaitData';
 // display comments sorted by likes
 const Comments = (props) => {
     const videoId = props.videoId; 
-    let { videoData } = useWaitData(`http://127.0.0.1:8000/video/${videoId}`)
+    let { commentsData, postComment } = useComments(`http://127.0.0.1:8000/video/${videoId}`)
 
     let [comments, setComments] = useState([]);
 
     useEffect(() => {
-        if (videoData) {
-            setComments(videoData);
+        if (commentsData.length > 0) {
+            debugger;
+            setComments(commentsData);
         }
-    }, [videoData])
+    }, [commentsData])
 
     if (comments.length > 0 ) {
         return (
-            <Comment comments={comments} />
+            <div>
+                <AddCommentView videoId={videoId} postComment={postComment} />
+                <p />
+                <Comment comments={comments} postComment={postComment} />
+            </div>
         )
     } else {
         return (
             <div>
-                Gathering Search results
+                <AddCommentView videoId={videoId} postComment={postComment} />
+                Gathering comments...
             </div>
         )
     }

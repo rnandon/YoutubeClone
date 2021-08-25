@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import AddCommentForm from '../AddCommentForm/AddCommentForm';
-import addComment from '../../hooks/addComment';
 
 // used to display addcomment form then send it to comment for display
 const AddComment = (props) => {
@@ -19,7 +18,7 @@ const AddComment = (props) => {
         const commentInfo = {
             "body": newComment,
         }
-        addComment(`http://127.0.0.1:8000/video/${videoId}`, commentInfo);
+        props.postComment(`http://127.0.0.1:8000/video/${videoId}`, commentInfo);
     }
 
     return (
