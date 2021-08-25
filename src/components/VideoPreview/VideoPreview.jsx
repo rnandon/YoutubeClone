@@ -42,19 +42,19 @@ const VideoPreview = (props) => {
                     <VideoThumbnail imgurl={video.thumbnail} className="align-items-center w-100" />
                 </div>
                 <div className="col-xs-10 text-center w-100">
-                    <h1>{videoInfo.title}</h1>
-                    <h2>{videoInfo.creator}</h2>
+                    <h3>{videoInfo.title}</h3>
+                    <h4>By: {videoInfo.creator}</h4>
                 </div>
             </Link>
         )
     } else if (type==="related") {
         // Smallest. Thumbnail on left, info on right
         return (
-            <Link to={`/video/${video.videoId}`} className="row related-link overflow-hidden m-4" >
-                <div className="card mb-3 mh-100">
+            <Link to={`/video/${video.videoId}`} className="row related-link overflow-hidden m-2" >
+                <div className="card py-2 ps-4 mh-100 bg-secondary">
                     <div className="row g-0 mh-100">
-                        <div className="col-md-5 mh-100">
-                            <VideoThumbnail imgurl={video.thumbnail} className="col-4 m-2 mh-100" />
+                        <div className="col-md-5 mt-3 p-1 mh-100">
+                            <VideoThumbnail imgurl={video.thumbnail} className="col-4"/>
                         </div>
                         <div className="col-md-6 mh-100 overflow-hidden">
                             <VideoInfo videoInfo={videoInfo} className="col-7 limit-width overflow-hidden" />

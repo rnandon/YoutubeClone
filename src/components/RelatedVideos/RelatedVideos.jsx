@@ -15,7 +15,7 @@ const RelatedVideos = (props) => {
     // setOutputResults(tempData.items);
 
     // Make API call and use live data
-    let {videoData} = useWaitData(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&relatedToVideoId=${props.videoId}&type=video&key=AIzaSyC2O3ybnnt7OD7m3rpYpYN50EzDk7qa5Ms`);
+    let {videoData} = useWaitData(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&relatedToVideoId=${props.videoId}&type=video&key=AIzaSyCrQ8epCYClv4Shg5vi1y3u4-BC4PGq7Mg`);
 
     useEffect(() => {
         console.log(videoData);
@@ -39,7 +39,11 @@ const RelatedVideos = (props) => {
                     creator: relatedVideo.snippet.channelTitle
                 };
 
-                return (<VideoPreview video={video} type="related" />) 
+                return (
+                    <div class="mb-4">
+                        <VideoPreview video={video} type="related" />
+                    </div>
+                ) 
             }
         });
         return (

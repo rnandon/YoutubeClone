@@ -1,3 +1,10 @@
 #popularVideos {
-    color: #C01414;
+    color: #FF0000;
+    font-size: 20px;
+    padding: 2%;
+    margin-top: 30px;
+    margin-left: 1%;
+    border-radius: 50px;
+    display: inline-block;
+    background-color: #FAF9F6;
 }
